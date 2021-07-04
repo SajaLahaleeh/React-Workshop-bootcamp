@@ -51,7 +51,7 @@ It also accepts arbitrary inputs (called “props”) and return React elements 
 They called it as function component because it is literally JavaScript functions.
 
 **Example:**
-```javascript=
+```javascript
 function Welcome(props) {
   return <h1>Hello World!</h1>;
 }
@@ -61,7 +61,7 @@ function Welcome(props) {
 Using ES6 classes, you create a react class component.
 
 **Example:**
-```javascript=
+```javascript
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
@@ -86,7 +86,7 @@ Here we have a Welcome component, which we can use in another component.
 
 lets use it in an App:
 
-```javascript=
+```javascript
 function App() {
   return (
     <div>
@@ -99,7 +99,7 @@ function App() {
 
 You can render **App** like that:
 
-```javascript=
+```javascript
 ReactDOM.render(
   <App />,
   document.getElementById('root')
@@ -121,14 +121,14 @@ ReactDOM.render(
 
 > #### Add a "brand" attribute to the Car element:
 
-```javascript=
+```javascript
 const myelement = <Car brand="Ford" />;
 ```
 
 > #### The component receives the argument as a props object:
 
 
-```javascript=
+```javascript
 // Use the brand attribute in the component:
 
 class Car extends React.Component {
@@ -139,7 +139,7 @@ class Car extends React.Component {
 ```
 > #### Props are also how you pass data from one component to another, as parameters.
 
-```javascript=
+```javascript
 // Send the "brand" property from the Garage component to the Car component:
 
 class Car extends React.Component {
@@ -164,7 +164,7 @@ ReactDOM.render(<Garage />, document.getElementById('root'));
 
 > #### If you have a variable to send, and not a string as in the example above, you just put the variable name inside curly brackets:
 
-```javascript=
+```javascript
 // Create a variable named "carname" and send it to the Car component:
 class Car extends React.Component {
   render() {
@@ -189,7 +189,7 @@ ReactDOM.render(<Garage />, document.getElementById('root'));
 
 > #### Or if it was an object:
 
-```javascript=
+```javascript
 // Create an object named "carinfo" and send it to the Car component:
 
 class Car extends React.Component {
@@ -215,7 +215,7 @@ ReactDOM.render(<Garage />, document.getElementById('root'));
 </br>
 
 - ### Props wiht function component
-```javascript=
+```javascript
 function Car({brand}) {
   render() {
     return <h2>I am a {brand}!</h2>;
@@ -259,7 +259,7 @@ ReactDOM.render(<Garage />, document.getElementById('root'));
 
 - ## Example:
 
-```javascript=
+```javascript
 // The state object can contain as many properties as you like:
 class Car extends React.Component {
   constructor(props) {
@@ -282,13 +282,13 @@ class Car extends React.Component {
 ```
 ### Using the state Object
 > ##### Refer to the state object anywhere in the component by using the 
-```javascript=
+```javascript
 this.state.propertyname
 ```
 
 ##### Refer to the state object in the render() method:
 
-```javascript=
+```javascript
 class Car extends React.Component {
   constructor(props) {
     super(props);
@@ -318,7 +318,7 @@ class Car extends React.Component {
 > ##### To change a value in the state object, use the this.setState() method. 
 > ##### When a value in the state object changes, the component will re-render, meaning that the output will change according to the new value(s).
 
-```javascript=
+```javascript
 class Car extends React.Component {
   constructor(props) {
     super(props);
