@@ -1,7 +1,7 @@
 
 # **React**
 
-![](https://i.imgur.com/1gp0x08.png)
+![](https://i.imgur.com/NYCkGlj.png)
 
 ---
 
@@ -22,16 +22,7 @@
 2. Creating Dynamic Web Applications Becomes Easier
 3. Reusable Components
 4. Performance Enhancement
-5. Known to be SEO Friendly
-6. The Benefit of Having JavaScript Library
-7. Native Approach
-8. Testability
-
-### Disdvantage of ReactJS
-1. The high pace of development
-2. Poor Documentation
-3. View Part
-4. JSX as a barrier
+5. The Benefit of Having JavaScript Library
 
 
 # **React Component**
