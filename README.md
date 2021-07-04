@@ -78,7 +78,7 @@ class Welcome extends React.Component {
 }
 ```
 
-## 3. Composing Components
+### Composing Components
 React components can refer to other components in their output.
 
 **Lets explain that with an example.**
