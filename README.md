@@ -114,4 +114,245 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+# React Props
+**Props** are **arguments** passed into React components it's passed to components via HTML attributes. React Props are like function arguments in JavaScript and **attributes in HTML**.
+
+</br>
+
+ To send props into a component, use the same syntax as HTML attributes:
+
+
+ **Example:**
+
+Add a **"brand"** attribute to the Car element:
+
+```javascript
+const myelement = <Car brand="Ford" />;
+```
+
+The component receives the argument as a **props object**:
+
+
+```javascript
+// Use the brand attribute in the component:
+
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.brand}!</h2>;
+  }
+}
+```
+Props are also how you pass data from **one component** to **another**, as parameters.
+
+```javascript
+// Send the "brand" property from the Garage component to the Car component:
+
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.brand}!</h2>;
+  }
+}
+
+class Garage extends React.Component {
+  render() {
+    return (
+      <div>
+      <h1>Who lives in my garage?</h1>
+      <Car brand="Ford" />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+
+If you have a **variable** to send, and not a string as in the example above, you just put the **variable** name inside curly brackets:
+
+```javascript
+// Create a variable named "carname" and send it to the Car component:
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.brand}!</h2>;
+  }
+}
+
+class Garage extends React.Component {
+  render() {
+    const carname = "Ford";
+    return (
+      <div>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={carname} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+
+Or if it was an **object**:
+
+```javascript
+// Create an object named "carinfo" and send it to the Car component:
+
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.brand.model}!</h2>;
+  }
+}
+
+class Garage extends React.Component {
+  render() {
+    const carinfo = {name: "Ford", model: "Mustang"};
+    return (
+      <div>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={carinfo} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+</br>
+
+###  Props wiht function component
+```javascript
+function Car({brand}) {
+  render() {
+    return <h2>I am a {brand}!</h2>;
+  }
+}
+
+function Garage {
+  render() {
+    const carname = "Ford";
+    return (
+      <div>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={carname} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+---
+</br>
+
+# React State
+
+
+### What is a State?
+
+The State of a component is an object that holds some information that may change over the lifetime of the component.
+
+</br>
+
+### Difference of Props and State.
+
+ 1. Props are immutable,once set the props cannot be changed, while State is an observable object that is to be used to hold data that may change over time and to control the behavior after each change.
+
+ 2. States can only be used in Class Components while Props don’t have this limitation in v 14 and less.
+
+ 3. While Props are set by the parent component, State is generally updated by event handlers.
+
+</br>
+
+**Example:**
+
+```javascript
+// The state object can contain as many properties as you like:
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>My Car</h1>
+      </div>
+    );
+  }
+}
+```
+**Using the state Object** 
+Refer to the state object anywhere in the component by using the:
+```javascript
+this.state.propertyname
+```
+Refer to the state object in the **render()** method:
+
+```javascript
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+      </div>
+    );
+  }
+}
+```
+Changing the state **Object**
+
+ To change a value in the state object, use the **this.setState()** method. When a value in the **state** object changes, the component will re-render, meaning that the output will change according to the new value(s).
+
+```javascript
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  changeColor = () => {
+    this.setState({color: "blue"});
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+        <button
+          type="button"
+          onClick={this.changeColor}
+        >Change color</button>
+      </div>
+    );
+  }
+}
+
+```
 
