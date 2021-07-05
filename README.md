@@ -51,9 +51,11 @@ In this section you will be known with react component and its types.
 
 It also accepts arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
-> React Component should name with a capital letter.
+> **React Component** should name with a capital letter.
 
-> All React components must act like pure functions with respect to their props.
+> All **React components** must act like pure functions with respect to their props.
+
+> A **React component** can be anything in your web application like a Button, Text, Label, or Grid.
 
 ### React Component Types:
 **1. Function Component:**
