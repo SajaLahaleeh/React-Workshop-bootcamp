@@ -29,7 +29,7 @@
 </br>
 
 # Why to Use React?
-1. Easy to Learn and USe
+1. Easy to Learn and Use
 2. Creating Dynamic Web Applications Becomes Easier
 3. Reusable Components
 4. Performance Enhancement
