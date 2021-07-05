@@ -27,11 +27,6 @@
 
 </br>
 
-# How React Work?
-![](https://i.imgur.com/dp4VVIv.png)
-
-</br>
-
 # Why to Use React?
 1. Easy to Learn and USe
 2. Creating Dynamic Web Applications Becomes Easier
@@ -39,7 +34,16 @@
 4. Performance Enhancement
 5. The Benefit of Having JavaScript Library
 
+</br>
 
+# Who Use React?
+
+![](https://i.imgur.com/vRbudib.png)
+
+</br>
+
+# How React Work?
+![](https://i.imgur.com/dp4VVIv.png)
 
 ---
 
