@@ -4,7 +4,7 @@
 
 ---
 # Learning Outcomes:
-- What is React
+- What is React?
 - Where we can use React?
 - How React Work?
 - Why to Use React?
@@ -42,7 +42,7 @@
 
 </br>
 
-# How React Work?
+# How does React flow?
 ![](https://i.imgur.com/dp4VVIv.png)
 
 ---
