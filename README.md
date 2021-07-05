@@ -6,9 +6,9 @@
 # Learning Outcomes:
 - What is React?
 - Where we can use React?
-- How React Work?
 - Why to Use React?
 - Who Use React?
+- How does React flow?
 - React Component
 - React Props
 - React State
