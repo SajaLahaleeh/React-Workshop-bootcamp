@@ -44,7 +44,7 @@
 </br>
 
 # How does React flow?
-![](https://i.imgur.com/dp4VVIv.png)
+![](https://i.imgur.com/HsNDMGb.png)
 
 ---
 
