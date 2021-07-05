@@ -143,10 +143,10 @@ The component receives the argument as a **props object**:
 ```javascript
 // Use the brand attribute in the component:
 
-class Car extends React.Component {
-  render() {
+function Car(props)  {
+  
     return <h2>I am a {this.props.brand}!</h2>;
-  }
+  
 }
 ```
 Props are also how you pass data from **one component** to **another**, as parameters.
@@ -154,21 +154,20 @@ Props are also how you pass data from **one component** to **another**, as param
 ```javascript
 // Send the "brand" property from the Garage component to the Car component:
 
-class Car extends React.Component {
-  render() {
+function Car(props) {
+  
     return <h2>I am a {this.props.brand}!</h2>;
-  }
+  
 }
 
-class Garage extends React.Component {
-  render() {
+function Garage() {
     return (
       <div>
       <h1>Who lives in my garage?</h1>
       <Car brand="Ford" />
       </div>
     );
-  }
+  
 }
 
 ReactDOM.render(<Garage />, document.getElementById('root'));
@@ -178,14 +177,12 @@ If you have a **variable** to send, and not a string as in the example above, yo
 
 ```javascript
 // Create a variable named "carname" and send it to the Car component:
-class Car extends React.Component {
-  render() {
+
+function Car(props) {
     return <h2>I am a {this.props.brand}!</h2>;
-  }
 }
 
-class Garage extends React.Component {
-  render() {
+function Garage(){
     const carname = "Ford";
     return (
       <div>
@@ -193,7 +190,6 @@ class Garage extends React.Component {
       <Car brand={carname} />
       </div>
     );
-  }
 }
 
 ReactDOM.render(<Garage />, document.getElementById('root'));
@@ -204,14 +200,13 @@ Or if it was an **object**:
 ```javascript
 // Create an object named "carinfo" and send it to the Car component:
 
-class Car extends React.Component {
-  render() {
+function Car(props){
+ 
     return <h2>I am a {this.props.brand.model}!</h2>;
-  }
+  
 }
 
-class Garage extends React.Component {
-  render() {
+function Garage(){
     const carinfo = {name: "Ford", model: "Mustang"};
     return (
       <div>
@@ -219,22 +214,21 @@ class Garage extends React.Component {
       <Car brand={carinfo} />
       </div>
     );
-  }
 }
 
 ReactDOM.render(<Garage />, document.getElementById('root'));
 ```
 </br>
 
-###  Props wiht function component
+###  Props wiht Class component
 ```javascript
-function Car({brand}) {
+class Car() extends React.Component {
   render() {
     return <h2>I am a {brand}!</h2>;
   }
 }
 
-function Garage {
+class Garage extends React.Component {
   render() {
     const carname = "Ford";
     return (
@@ -274,7 +268,7 @@ The State of a component is an object that holds some information that may chang
 
 ```javascript
 // The state object can contain as many properties as you like:
-class Car extends React.Component {
+function Car(props) {
   constructor(props) {
     super(props);
     this.state = {
@@ -284,13 +278,11 @@ class Car extends React.Component {
       year: 1964
     };
   }
-  render() {
     return (
       <div>
         <h1>My Car</h1>
       </div>
     );
-  }
 }
 ```
 **Using the state Object** 
@@ -301,7 +293,7 @@ this.state.propertyname
 Refer to the state object in the **render()** method:
 
 ```javascript
-class Car extends React.Component {
+function Car(props) {
   constructor(props) {
     super(props);
     this.state = {
@@ -311,7 +303,7 @@ class Car extends React.Component {
       year: 1964
     };
   }
-  render() {
+
     return (
       <div>
         <h1>My {this.state.brand}</h1>
@@ -322,7 +314,6 @@ class Car extends React.Component {
         </p>
       </div>
     );
-  }
 }
 ```
 Changing the state **Object**
@@ -330,7 +321,7 @@ Changing the state **Object**
  To change a value in the state object, use the **this.setState()** method. When a value in the **state** object changes, the component will re-render, meaning that the output will change according to the new value(s).
 
 ```javascript
-class Car extends React.Component {
+function Car(props) {
   constructor(props) {
     super(props);
     this.state = {
@@ -343,7 +334,6 @@ class Car extends React.Component {
   changeColor = () => {
     this.setState({color: "blue"});
   }
-  render() {
     return (
       <div>
         <h1>My {this.state.brand}</h1>
@@ -358,11 +348,13 @@ class Car extends React.Component {
         >Change color</button>
       </div>
     );
-  }
 }
 
 ```
+
+
 ---
+
 # Mentors Team 
 - [Hanan](https://github.com/Hanan795/)
 - [Saja](https://github.com/SajaLahaleeh)
