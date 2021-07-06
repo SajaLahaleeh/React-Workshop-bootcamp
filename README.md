@@ -290,7 +290,7 @@ Refer to the state object anywhere in the component by using the:
 ```javascript
 this.state.propertyname
 ```
-Refer to the state object in the **render()** method:
+Refer to the state object in the **return()** method:
 
 ```javascript
 function Car(props) {
